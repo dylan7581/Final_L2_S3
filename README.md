@@ -9,26 +9,26 @@ Utiliser compte github sur git:
 
 Commande ajout du dossier dans dossier personnel:
 
-	$ git clone https://github.com/dylan7581/Final_L2_S3.git
+	$ git clone https://github.com/dylan7581/Final_L2_S3_Web.git
 
 Voir le Status des fichiers :
 
-	~/Final_L2_S3$ git status
+	~/Final_L2_S3_Web$ git status
 
 Mettre à jour le dossier:
 
-	~/Final_L2_S3$ git pull
+	~/Final_L2_S3_Web$ git pull
 
 Publier fichier ajouter dans le dossier:
 
-	~/Final_L2_S3$ git add nom_du_fichier
-	~/Final_L2_S3$ git commit -m "Message qui sera affichier à côté du fichier"
+	~/Final_L2_S3_Web$ git add nom_du_fichier
+	~/Final_L2_S3_Web$ git commit -m "Message qui sera affichier à côté du fichier"
 	
 	## Même commande que les 2 précédentes, mais sert à publier TOUT les fichiers modifiés ##
-	~/Final_L2_S3$ git commit -a -m "Message qui sera affichier à côté du fichier"
+	~/Final_L2_S3_Web$ git commit -a -m "Message qui sera affichier à côté du fichier"
 	##-------------------------------------------------------------------------------------##
 	
-	~/Final_L2_S3$ git push
+	~/Final_L2_S3_Web$ git push
 
 Site d'aide:
 
