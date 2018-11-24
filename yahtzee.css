@@ -1,0 +1,65 @@
+table {
+ 	margin-left:auto;
+	margin-right:auto;
+	border-collapse: collapse;
+}
+
+.button {
+	border: none;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	margin: 4px 30px 4px 0px;
+	cursor: pointer;
+	background-color: white; 
+	color: black; 
+	border: 2px solid #4CAF50;
+	width: 30%;
+}
+
+.button:hover {
+	background-color: #4CAF50;
+  color: white;
+}
+
+.button1 {
+	border: none;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	margin: 4px 2px;
+	cursor: pointer;
+	background-color: white; 
+	color: black; 
+	border: 2px solid #EF1515;
+	width: 10%;
+}
+
+.button1:hover {
+	background-color: #EF1515;
+  color: white;
+}
+
+.txtbox {
+	width: 50%;
+  padding: 10px;
+  margin: 4px 2px;
+  border: 2px solid #CBCECB;
+}
+
+.txtbox1 {
+	width: 30%;
+  padding: 10px;
+  margin: 4px 2px;
+  border: 2px solid #CBCECB;
+}
+
+#td {
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	text-align: center;
+}
+
+.bas, tbody {
+	border-top: 1px solid gray;
+}
