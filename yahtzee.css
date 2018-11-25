@@ -48,7 +48,7 @@ table {
 }
 
 .txtbox1 {
-	width: 30%;
+	width: 50%;
   padding: 10px;
   margin: 4px 2px;
   border: 2px solid #CBCECB;
@@ -60,6 +60,15 @@ table {
 	text-align: center;
 }
 
-.bas, tbody {
+tbody, .tr1 {
 	border-top: 1px solid gray;
+}
+
+#td1 {
+	text-align: center;
+}
+
+#td1 label {
+	margin-right: 55px;
+	margin-left: 55px; 
 }

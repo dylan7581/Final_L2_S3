@@ -60,16 +60,21 @@
 						<td id="td" ></td>
 						<td id="td" ><label>Total section basse </label><input name="textchance" type="text" class="txtbox" disabled="true"></td>
 					</tr>
-					<tr>
-						<td colspan="2" align="center" class="bas"><label>Total </label><input name="textchance" type="text" class="txtbox1" disabled="true"></td>
+					<tr class="tr1">
+						<td></td>
+						<td align="center" id="td1"><label>Total </label><input name="textchance" type="text" class="txtbox1" disabled="true"></td>
 					</tr>
 				</tbody>
 			</table>
-
+			<img src="des/De1.png" width="80" height="80">
 		  <input type="checkbox" name="d1"><label>Keep</label>
+		  <img src="des/De2.png" width="80" height="80">
 		  <input type="checkbox" name="d2"><label>Keep</label>
+		  <img src="des/De3.png" width="80" height="80">
 		  <input type="checkbox" name="d3"><label>Keep</label>
+		  <img src="des/De4.png" width="80" height="80">
 		  <input type="checkbox" name="d4"><label>Keep</label>
+		  <img src="des/De5.png" width="80" height="80">
 		  <input type="checkbox" name="d5"><label>Keep</label>
 		  <input type="submit" name="lancer" value="lancer! (3)" class="button1">
 		</form>
