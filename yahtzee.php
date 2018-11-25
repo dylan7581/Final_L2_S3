@@ -5,6 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="yahtzee.css"/>
 	</head>
 	<body>
+		<h1>Yahtzee</h1>
 		<form method="post" action="">
 			<table>
 				<thead>
@@ -66,15 +67,15 @@
 					</tr>
 				</tbody>
 			</table>
-			<img src="des/De1.png" width="80" height="80">
+		  <img src="des/De1.png">
 		  <input type="checkbox" name="d1"><label>Keep</label>
-		  <img src="des/De2.png" width="80" height="80">
+		  <img src="des/De2.png">
 		  <input type="checkbox" name="d2"><label>Keep</label>
-		  <img src="des/De3.png" width="80" height="80">
+		  <img src="des/De3.png">
 		  <input type="checkbox" name="d3"><label>Keep</label>
-		  <img src="des/De4.png" width="80" height="80">
+		  <img src="des/De4.png">
 		  <input type="checkbox" name="d4"><label>Keep</label>
-		  <img src="des/De5.png" width="80" height="80">
+		  <img src="des/De5.png">
 		  <input type="checkbox" name="d5"><label>Keep</label>
 		  <input type="submit" name="lancer" value="lancer! (3)" class="button1">
 		</form>

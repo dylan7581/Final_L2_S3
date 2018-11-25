@@ -1,3 +1,8 @@
+body {
+	background: url(./paper.jpg);
+	text-align: center;
+}
+
 table {
  	margin-left:auto;
 	margin-right:auto;
@@ -11,7 +16,7 @@ table {
 	text-align: center;
 	margin: 4px 30px 4px 0px;
 	cursor: pointer;
-	background-color: white; 
+	background-color: transparent/*white*/; 
 	color: black; 
 	border: 2px solid #4CAF50;
 	width: 30%;
@@ -29,7 +34,7 @@ table {
 	text-align: center;
 	margin: 4px 2px;
 	cursor: pointer;
-	background-color: white; 
+	background-color: transparent/*white*/; 
 	color: black; 
 	border: 2px solid #EF1515;
 	width: 10%;
@@ -44,14 +49,16 @@ table {
 	width: 50%;
   padding: 10px;
   margin: 4px 2px;
-  border: 2px solid #CBCECB;
+  border: 2px solid #B1B1B1;
+  background: #E0E0E0;
 }
 
 .txtbox1 {
 	width: 50%;
   padding: 10px;
   margin: 4px 2px;
-  border: 2px solid #CBCECB;
+  border: 2px solid #B1B1B1;
+  background: #E0E0E0;
 }
 
 #td {
@@ -71,4 +78,9 @@ tbody, .tr1 {
 #td1 label {
 	margin-right: 55px;
 	margin-left: 55px; 
+}
+
+img {
+	width: 80px;
+	height: 80px;
 }
