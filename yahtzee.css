@@ -1,5 +1,8 @@
 body {
 	background: url(./paper.jpg);
+}
+
+h1 {
 	text-align: center;
 }
 
@@ -10,13 +13,11 @@ table {
 }
 
 .button {
-	border: none;
-	color: white;
 	padding: 10px;
 	text-align: center;
 	margin: 4px 30px 4px 0px;
 	cursor: pointer;
-	background-color: transparent/*white*/; 
+	background-color: transparent; 
 	color: black; 
 	border: 2px solid #4CAF50;
 	width: 30%;
@@ -28,16 +29,14 @@ table {
 }
 
 .button1 {
-	border: none;
-	color: white;
-	padding: 10px;
 	text-align: center;
-	margin: 4px 2px;
 	cursor: pointer;
-	background-color: transparent/*white*/; 
+	background-color: transparent; 
 	color: black; 
 	border: 2px solid #EF1515;
-	width: 10%;
+	width: 90px;
+	height: 80px;
+	border-radius: 10px;
 }
 
 .button1:hover {
@@ -76,11 +75,17 @@ tbody, .tr1 {
 }
 
 #td1 label {
-	margin-right: 55px;
-	margin-left: 55px; 
+	margin-right: 85px;
 }
 
 img {
 	width: 80px;
 	height: 80px;
+	margin-right: 20px;
 }
+
+.affichage_des {
+	display: inline-flex;
+	margin-left: 30%;
+}
+

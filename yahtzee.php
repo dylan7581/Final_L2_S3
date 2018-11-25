@@ -67,17 +67,35 @@
 					</tr>
 				</tbody>
 			</table>
-		  <img src="des/De1.png">
-		  <input type="checkbox" name="d1"><label>Keep</label>
-		  <img src="des/De2.png">
-		  <input type="checkbox" name="d2"><label>Keep</label>
-		  <img src="des/De3.png">
-		  <input type="checkbox" name="d3"><label>Keep</label>
-		  <img src="des/De4.png">
-		  <input type="checkbox" name="d4"><label>Keep</label>
-		  <img src="des/De5.png">
-		  <input type="checkbox" name="d5"><label>Keep</label>
-		  <input type="submit" name="lancer" value="lancer! (3)" class="button1">
+			<br>
+			<div class="affichage_des">
+				<div>
+				  <img src="des/De1.png">
+				  <br>
+		  		<input type="checkbox" name="d1"><label>Keep</label>
+			  </div>
+			  <div>
+				  <img src="des/De2.png">
+				  <br>
+				  <input type="checkbox" name="d2"><label>Keep</label>
+			  </div>
+			  <div>
+				  <img src="des/De3.png">
+				  <br>
+				  <input type="checkbox" name="d3"><label>Keep</label>
+				</div>
+				<div>
+				  <img src="des/De4.png">
+				  <br>
+				  <input type="checkbox" name="d4"><label>Keep</label>
+				</div>
+				<div>
+				  <img src="des/De5.png">
+				  <br>
+				  <input type="checkbox" name="d5"><label>Keep</label>
+				</div>
+			  <input type="submit" name="lancer" value="lancer! (3)" class="button1">
+		  </div>
 		</form>
 	</body>
 </html>
