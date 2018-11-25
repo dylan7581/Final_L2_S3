@@ -1,9 +1,16 @@
+@font-face {
+	font-family: "Best Prices";
+	src: url('Best Prices.ttf');
+}
+
 body {
 	background: url(./paper.jpg);
 }
 
 h1 {
 	text-align: center;
+	text-transform: uppercase;
+	font-family: "Best Prices";
 }
 
 table {
@@ -26,6 +33,10 @@ table {
 .button:hover {
 	background-color: #4CAF50;
   color: white;
+}
+
+.button:active, .button1:active {
+	transform: translateY(4px);
 }
 
 .button1 {
@@ -88,4 +99,3 @@ img {
 	display: inline-flex;
 	margin-left: 30%;
 }
-
