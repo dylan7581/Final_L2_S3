@@ -99,3 +99,10 @@ img {
 	display: inline-flex;
 	margin-left: 30%;
 }
+
+.button:disabled, .button1:disabled {
+	border: 2px solid grey;
+	background-color: grey;
+	transform: none;
+	color: white;
+}
