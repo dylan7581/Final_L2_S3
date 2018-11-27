@@ -22,12 +22,12 @@ table {
 .button {
 	padding: 10px;
 	text-align: center;
-	margin: 4px 30px 4px 0px;
+	margin: 4px 7% 4px 0px;
 	cursor: pointer;
 	background-color: transparent; 
 	color: black; 
 	border: 2px solid #4CAF50;
-	width: 30%;
+	width: 34%;
 }
 
 .button:hover {
@@ -56,15 +56,15 @@ table {
 }
 
 .txtbox {
-	width: 50%;
+	width: 45%;
   padding: 10px;
-  margin: 4px 2px;
+  margin: 4px 2px 4px 0px;
   border: 2px solid #B1B1B1;
   background: #E0E0E0;
 }
 
 .txtbox1 {
-	width: 50%;
+	width: 45%;
   padding: 10px;
   margin: 4px 2px;
   border: 2px solid #B1B1B1;
@@ -86,7 +86,7 @@ tbody, .tr1 {
 }
 
 #td1 label {
-	margin-right: 85px;
+	margin-right: 30%;
 }
 
 img {
@@ -105,4 +105,8 @@ img {
 	background-color: grey;
 	transform: none;
 	color: white;
+}
+
+#td label {
+	margin-right: 4%;
 }
