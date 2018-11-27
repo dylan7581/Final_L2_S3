@@ -18,7 +18,7 @@
 
   //Affichage des dés au premier tour. L'utilisateur ne peut pas garder les dés
   //  à ce moment. 
-  echo "<form action='yahtzee.php' method='post'>";
+  echo "<form action='' method='post'>";
   echo "<div class='affichage_des'>";
   echo "<div>";
   echo "<img src='des/De1.png'>";

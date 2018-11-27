@@ -87,57 +87,27 @@
     //print_dice : Affiche le dé correspondant à la valeur de la variable
     //  $_SESSION['de[n]'] où [n] est le chiffre correspondant au dé à afficher.
     //  Affiche "Erreur d'affichage" et met fin à la session en cas d'erreur.
-    function print_dice($n) {
-    if ($n === 1) {
-      echo "<div>";
-      echo "<img src='des/De1.png'>";
-      echo "<br/>";
-      echo "<input type='checkbox' value='1' name='d1'><label>Garder</label>";
-      echo "</div>";
-    } else if ($n === 2) {
-      echo "<div>";
-      echo "<img src='des/De2.png'>";
-      echo "<br/>";
-      echo "<input type='checkbox' value='1' name='d2'><label>Garder</label>";
-      echo "</div>";
-    } else if ($n === 3) {
-      echo "<div>";
-      echo "<img src='des/De3.png'>";
-      echo "<br/>";
-      echo "<input type='checkbox' value='1' name='d3'><label>Garder</label>";
-      echo "</div>";
-    } else if ($n === 4) {
-      echo "<div>";
-      echo "<img src='des/De4.png'>";
-      echo "<br/>";
-      echo "<input type='checkbox' value='1' name='d4'><label>Garder</label>";
-      echo "</div>";
-    } else if ($n === 5) {
-      echo "<div>";
-      echo "<img src='des/De5.png'>";
-      echo "<br/>";
-      echo "<input type='checkbox' value='1' name='d5'><label>Garder</label>";
-      echo "</div>";
-    } else if ($n === 6) {
-      echo "<div>";
-      echo "<img src='des/De6.png'>";
-      echo "<br/>";
-      echo "<input type='checkbox' value='1' name='d6'><label>Garder</label>";
-      echo "</div>";
-    } else {
-      echo "<p>Erreur d'affichage</p>";
-      session_destroy();
+    function print_dice($n, $c) {
+      if ($n >= 1 && $n <= 6) {
+        echo "<div>";
+        echo "<img src='des/De$n.png'>";
+        echo "<br/>";
+        echo "<input type='checkbox' name='d$c'><label>Garder</label>";
+        echo "</div>";
+      } else {
+        echo "<p>Erreur d'affichage</p>";
+        session_destroy();
+      }
     }
-  }
 
     //print_all_dice : Affiche tous les dés initialisés. Affiche un message d'erreur
     //  et met fin à la session en cas d'erreur sur un des dés.
     function print_all_dice(){
-      print_dice($_SESSION['de1']);
-      print_dice($_SESSION['de2']);
-      print_dice($_SESSION['de3']);
-      print_dice($_SESSION['de4']);
-      print_dice($_SESSION['de5']);
+      print_dice($_SESSION['de1'], 1);
+      print_dice($_SESSION['de2'], 2);
+      print_dice($_SESSION['de3'], 3);
+      print_dice($_SESSION['de4'], 4);
+      print_dice($_SESSION['de5'], 5);
     }
 
     //print_throw_button : Affiche le bouton "Lancer!" suivi de nombre de coups
@@ -158,29 +128,29 @@
     //  que l'utilisateur a choisi de ne pas garder puis réduit le nombre de
     //  coups qu'il/elle peut jouer. 
     function next_turn() {
-      if ($_POST['d1'] !== '1'){
+      if ($_POST['d1'] !== on){
         $_SESSION['de1'] = rand(1, 6);
       }
-      if ($_POST['d2'] !== '1'){
+      if ($_POST['d2'] !== on){
         $_SESSION['de2'] = rand(1, 6);
       }
-      if ($_POST['d3'] !== '1'){
+      if ($_POST['d3'] !== on){
         $_SESSION['de3'] = rand(1, 6);
       }
-      if ($_POST['d4'] !== '1'){
+      if ($_POST['d4'] !== on){
         $_SESSION['de4'] = rand(1, 6);
       }
-      if ($_POST['d5'] !== '1'){
+      if ($_POST['d5'] !== on){
         $_SESSION['de5'] = rand(1, 6);
       }
-      $_SESSION['tour'] = $_SESSION['tour'] - 1;
     }
     
-    echo "<form action = 'yahtzee.php' method='post'>";
+    echo "<form action = '' method='post'>";
     echo "<div class='affichage_des'>";
+    next_turn();
     print_all_dice();
     print_throw_button($_SESSION['tour']);
-    next_turn();
+    $_SESSION['tour'] = $_SESSION['tour'] - 1;
     echo "</div>";
     echo "</form>";
   }
