@@ -71,13 +71,13 @@ table {
   background: #E0E0E0;
 }
 
-#td {
+.td {
 	border-right: 1px solid gray;
 	border-left: 1px solid gray;
 	text-align: center;
 }
 
-tbody, .tr1 {
+tbody, #tr1 {
 	border-top: 1px solid gray;
 }
 
