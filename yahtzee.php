@@ -25,7 +25,7 @@
     function print_dice($n, $c) {
       if ($n >= 1 && $n <= 6) {
         echo "<div>";
-        echo "<img src='des/De$n.png'>";
+        echo "<img src='des/De$n.png' alt='Dé $n' name='img_de$c' onclick=\"checkbox('d$c', 'img_de$c')\">";
         echo "<br/>";
         echo "<input type='checkbox' name='d$c'><label>Garder</label>";
         echo "</div>";
@@ -61,7 +61,7 @@
 
     //  next_turn : Attribue aléatoirement une valeur entre 1 et 6 à chaque dé
     //    que l'utilisateur a choisi de ne pas garder puis réduit le nombre de
-    //    coups qu'il/elle peut jouer. 
+    //    coups qu'il/elle peut jouer.
     function next_turn() {
       if ($_POST['d1'] !== on){
         $_SESSION['de1'] = rand(1, 6);
