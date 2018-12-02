@@ -9,12 +9,6 @@
   //Nombre de fois que l'utilisateur peut appuyer sur le bouton "Lancer!" après
   //  avoir démarré la partie.
   $_SESSION['tour'] = 2;
-  
-  $_SESSION['de1'] = 0;
-  $_SESSION['de2'] = 0;
-  $_SESSION['de3'] = 0;
-  $_SESSION['de4'] = 0;
-  $_SESSION['de5'] = 0;
 
   $line = "
       <form method=\"post\" action=\"\">
