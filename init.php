@@ -9,7 +9,8 @@
   //Nombre de fois que l'utilisateur peut appuyer sur le bouton "Lancer!" après
   //  avoir démarré la partie.
   $_SESSION['tour'] = 2;
-
+  
+  //Initialisation des parties hautes et basses de l'interface du jeu.
   $line = "
       <form method=\"post\" action=\"\">
         <table>
