@@ -212,9 +212,9 @@
           break;
 			}
     }
-		
-		//	update_button : Met à jour la valeur du bouton de nom $button si ce-dernier n'as pas encore été utilisé
-		function update_button($button, $updateVal) {
+
+	//	update_button : Met à jour la valeur du bouton de nom $button si ce-dernier n'as pas encore été utilisé
+  function update_button($button, $updateVal) {
       switch($button) {
         case 'bouton1':
           if (isset($_POST['bouton1']) === true && $_SESSION['results'][0] === -1) {
@@ -284,6 +284,7 @@
 			}
     }
 		
+		//	update_all : Met à jour tous les boutons non initialisés au cas où l'utilisateur appuye sur eux.
 		function update_all($dTab) {
 			update_button('bouton1', calcul('bouton1', $dTab));
 			update_button('bouton2', calcul('bouton2', $dTab);
@@ -300,6 +301,8 @@
 			update_button('boutonchance', calcul('boutonchance', $dTab);
 		}
 		
+		//	update_results : Met à jour le total de la partie haute, de la partie basse, et général respectivement
+		//		contenus dans $_SESSION['results'][13], $_SESSION['results'][14], et $_SESSION['results'][15]
 		function update_results() {
 			$hsum = 0;
 			$lsum = 0;
