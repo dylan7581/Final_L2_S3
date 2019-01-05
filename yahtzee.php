@@ -267,18 +267,18 @@
 					}
 					break;
         case 'boutongsuite':
-          if isset($_POST['boutongsuite']) === true && $_SESSION['results'][9] === -1)) {
-            $_SESSION['results'][9] = $updateVal;
-          }
-          break;
-        case 'boutonyahtzee':
-          if isset($_POST['boutonyahtzee']) === true && $_SESSION['results'][10] === -1)) {
+          if isset($_POST['boutongsuite']) === true && $_SESSION['results'][10] === -1)) {
             $_SESSION['results'][10] = $updateVal;
           }
           break;
-        case 'boutonchance':
-          if isset($_POST['boutonchance']) === true && $_SESSION['results'][11] === -1)) {
+        case 'boutonyahtzee':
+          if isset($_POST['boutonyahtzee']) === true && $_SESSION['results'][11] === -1)) {
             $_SESSION['results'][11] = $updateVal;
+          }
+          break;
+        case 'boutonchance':
+          if isset($_POST['boutonchance']) === true && $_SESSION['results'][12] === -1)) {
+            $_SESSION['results'][12] = $updateVal;
 					}
           break;
 			}
@@ -299,7 +299,26 @@
 			update_button('boutonyahtzee', calcul('boutonyahtzee', $dTab);
 			update_button('boutonchance', calcul('boutonchance', $dTab);
 		}
-			
+		
+		function update_results() {
+			$hsum = 0;
+			$lsum = 0;
+			$res = 0;
+			for ($i = 0; $i < 12; ++$i) {
+				if ($_SESSION['results'][$i] !== -1) {
+					if ($i < 5) {
+						$hsum = $hsum + $_SESSION['results'][$i];
+					} else {
+						$lsum = $lsum + $_SESSION['results'][$i];
+					}
+				}
+			}
+			$res = $hsum + $lsum;
+			$_SESSION['results'][13] = $hsum;
+			$_SESSION['results'][14] = $lsum;
+			$_SESSION['results'][15] = $res;
+		}
+		
     next_turn();
     $de1 = $_SESSION['de1'];
     $de2 = $_SESSION['de2'];
@@ -321,6 +340,7 @@
     $value_boutonyahtzee = calcul('boutonyahtzee', $dice_tab);
     $value_boutonchance = calcul('boutonchance', $dice_tab);
     update_all($dice_tab);
+		update_results();
     $line = "
     <form method=\"post\" action=\"\">
       <table>
@@ -369,17 +389,17 @@
           </tr>
           <tr>
             <td class=\"td\" ><label>Total section haute</label>
-                <input name=\"textsectionh\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
+                <input name=\"textsectionh\" type=\"text\" class=\"txtbox\" value='$_SESSION['results'][13]' disabled=\"true\"></td>
             <td class=\"td\" ><input value=\"Chance\" name=\"boutonchance\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textchance', ".$value_boutonchance.")\" onmouseout=\"clearbox('textchance')\">
                 <input name=\"textchance\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
             <td class=\"td\" ></td>
-            <td class=\"td\" ><label>Total section basse </label><input name=\"textsectionl\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
+            <td class=\"td\" ><label>Total section basse </label><input name=\"textsectionl\" type=\"text\" class=\"txtbox\" value='$_SESSION['results'][14]' disabled=\"true\"></td>
           </tr>
           <tr id=\"tr1\">
             <td></td>
-            <td align=\"center\" id=\"td1\"><label>Total </label><input name=\"texttot\" type=\"text\" class=\"txtbox1\" disabled=\"true\"></td>
+            <td align=\"center\" id=\"td1\"><label>Total </label><input name=\"texttot\" type=\"text\" class=\"txtbox1\" value='$_SESSION['results'][15]' disabled=\"true\"></td>
           </tr>
         </tbody>
       </table>
