@@ -10,11 +10,8 @@
   //  avoir démarré la partie.
   $_SESSION['tour'] = 2;
   
-  //Initialisation du tableau des résultats.
-  //  Les 6 premières cases correspondent à la section haute dont le total est stocké dans la 14è case.
-  //  Les 7 suivantes correspondent à la section basse dont le total est stocké dans la 15è case.
-  //  La dernière case correspond à la somme des deux totaux qui la précèdent.
-  $_SESSION['results'] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0];
+  //Initialisation du tableau des résultats
+  $_SESSION['results'] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0];
 
   //Initialisation des parties hautes et basses de l'interface du jeu.
   $line = "
