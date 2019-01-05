@@ -45,6 +45,9 @@
     ||isset($_POST['boutongsuite']) === true
     ||isset($_POST['boutonyahtzee']) === true
     ||isset($_POST['boutonchance']) === true) {
+		
+//--- Fonctions utilisées -------------------------------------------------------------------------------------
+		
     //  print_dice : Affiche le dé correspondant à la valeur de la variable
     //    $_SESSION['de[n]'] où [n] est le chiffre correspondant au dé à afficher.
     //    Affiche "Erreur d'affichage" et met fin à la session en cas d'erreur.
@@ -86,8 +89,7 @@
     }
 
     //  next_turn : Attribue aléatoirement une valeur entre 1 et 6 à chaque dé
-    //    que l'utilisateur a choisi de ne pas garder puis réduit le nombre de
-    //    coups qu'il/elle peut jouer.
+    //    que l'utilisateur a choisi de ne pas garder.
     function next_turn() {
       if ($_POST['d1'] !== on){
         $_SESSION['de1'] = rand(1, 6);
@@ -147,7 +149,7 @@
       return $tot&&($n1 == $n);
     }
 
-    //  calcul : fonction qui calcul, pour un bouton donné et un tableau représentant
+    //  calcul : fonction qui calcul, pour un bouton donné $button et un tableau représentant
     //    les valeurs des dés, la valeur associée.
     function calcul($button, $dice_tab) {
       $dice_tab_occ = array_count_values($dice_tab);
@@ -209,7 +211,8 @@
           }
           break;
         case 'boutonfull':
-          if (is_n_identical_dice(3, $dice_tab_occ) === true && is_n_identical_dice(2, $dice_tab_occ) === true) {
+          if (is_n_identical_dice(3, $dice_tab_occ) === true 
+							&& is_n_identical_dice(2, $dice_tab_occ) === true) {
             return 25;
           } else {
             return "";
@@ -239,7 +242,8 @@
 			}
     }
 
-	//	update_button : Met à jour la valeur du bouton de nom $button si ce-dernier n'as pas encore été utilisé
+	//	update_button : Met à jour la valeur au champ de nom $button si le bouton associé n'as pas encore
+	//		été utilisé.
   function update_button($button, $updateVal) {
       switch($button) {
         case 'bouton1':
@@ -328,7 +332,7 @@
 		}
 		
 		//	update_results : Met à jour le total de la partie haute, de la partie basse, et général respectivement
-		//		contenus dans $_SESSION['results'][13], $_SESSION['results'][14], et $_SESSION['results'][15]
+		//		contenus dans $_SESSION['results'][13], $_SESSION['results'][14], et $_SESSION['results'][15].
 		function update_results() {
 			$hsum = 0;
 			$lsum = 0;
@@ -347,20 +351,10 @@
 			$_SESSION['results'][14] = $lsum;
 			$_SESSION['results'][15] = $res;
 		}
-		if (isset($_POST['lancer']) === true
-			&&isset($_POST['bouton1']) === false
-    	&&isset($_POST['bouton2']) === false
-    	&&isset($_POST['bouton3']) === false
-    	&&isset($_POST['bouton4']) === false
-  		&&isset($_POST['bouton5']) === false
-   		&&isset($_POST['bouton6']) === false
-    	&&isset($_POST['boutonbrelan']) === false
-   		&&isset($_POST['boutoncarre']) === false
-    	&&isset($_POST['boutonfull']) === false
-    	&&isset($_POST['boutonpsuite']) === false
-    	&&isset($_POST['boutongsuite']) === false
-    	&&isset($_POST['boutonyahtzee']) === false
-    	&&isset($_POST['boutonchance']) === false) {
+		
+//--- Programme principal -------------------------------------------------------------------------------------
+		
+		if (isset($_POST['lancer']) === true) {
     	next_turn();
 		}
     $de1 = $_SESSION['de1'];
@@ -458,7 +452,9 @@
     echo "<div class='affichage_des'>";
     print_all_dice();
     print_throw_button($_SESSION['tour']);
-    $_SESSION['tour'] = $_SESSION['tour'] - 1;
+		if (isset($_SESSION['lancer']) === true) {
+    	$_SESSION['tour'] = $_SESSION['tour'] - 1;
+		}
     echo "</div>";
     echo "</form>";
   }
