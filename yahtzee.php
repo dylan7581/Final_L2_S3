@@ -15,7 +15,20 @@
   </body>
 </html>
 <?php
-  if(isset($_POST['lancer']) === false) {
+  if(isset($_POST['lancer']
+		||isset($_POST['bouton1']) === false
+    ||isset($_POST['bouton2']) === false
+    ||isset($_POST['bouton3']) === false
+    ||isset($_POST['bouton4']) === false
+    ||isset($_POST['bouton5']) === false
+    ||isset($_POST['bouton6']) === false
+    ||isset($_POST['boutonbrelan']) === false
+    ||isset($_POST['boutoncarre']) === false
+    ||isset($_POST['boutonfull']) === false
+    ||isset($_POST['boutonpsuite']) === false
+    ||isset($_POST['boutongsuite']) === false
+    ||isset($_POST['boutonyahtzee']) === false
+    ||isset($_POST['boutonchance']) === true) === false) {
     include("init.php");
   }
   if(isset($_POST['lancer']) === true
