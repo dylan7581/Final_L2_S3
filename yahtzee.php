@@ -456,6 +456,9 @@
     	$_SESSION['tour'] = $_SESSION['tour'] - 1;
 			$_SESSION['relance'] = true;
 		}
+	  else {
+		  $_SESSION['relance'] = false;
+	  }
     echo "</div>";
     echo "</form>";
   }
