@@ -28,7 +28,7 @@
     ||isset($_POST['boutonpsuite']) === false
     ||isset($_POST['boutongsuite']) === false
     ||isset($_POST['boutonyahtzee']) === false
-    ||isset($_POST['boutonchance']) === true) === false) {
+    ||isset($_POST['boutonchance']) === false) {
     include("init.php");
   }
   if(isset($_POST['lancer']) === true
