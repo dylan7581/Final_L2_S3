@@ -10,6 +10,9 @@
   //  avoir démarré la partie.
   $_SESSION['tour'] = 2;
   
+  //Initialisation du tableau des résultats
+  $_SESSION['results'] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+
   //Initialisation des parties hautes et basses de l'interface du jeu.
   $line = "
       <form method=\"post\" action=\"\">
