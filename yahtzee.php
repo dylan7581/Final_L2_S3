@@ -452,8 +452,9 @@
     echo "<div class='affichage_des'>";
     print_all_dice();
     print_throw_button($_SESSION['tour']);
-		if (isset($_SESSION['lancer']) === true) {
+		if (isset($_SESSION['lancer']) === true || $_SESSION['relance'] === true) {
     	$_SESSION['tour'] = $_SESSION['tour'] - 1;
+			$_SESSION['relance'] = true;
 		}
     echo "</div>";
     echo "</form>";
