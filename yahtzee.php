@@ -222,62 +222,62 @@
           }
           break;
         case 'bouton2':
-          if (isset($_POST['bouton2']) === true && $_SESSION['results'][1] === -1)) {
+          if (isset($_POST['bouton2']) === true && $_SESSION['results'][1] === -1) {
             $_SESSION['results'][1] = $updateVal;
           }
           break;
         case 'bouton3':
-          if (isset($_POST['bouton3']) === true && $_SESSION['results'][2] === -1)) {
+          if (isset($_POST['bouton3']) === true && $_SESSION['results'][2] === -1) {
             $_SESSION['results'][2] = $updateVal;
           }
           break;
         case 'bouton4':
-          if (isset($_POST['bouton4']) === true && $_SESSION['results'][3] === -1)) {
+          if (isset($_POST['bouton4']) === true && $_SESSION['results'][3] === -1) {
             $_SESSION['results'][3] = $updateVal;
           }
           break;
         case 'bouton5':
-          if (isset($_POST['bouton5']) === true && $_SESSION['results'][4] === -1)) {
+          if (isset($_POST['bouton5']) === true && $_SESSION['results'][4] === -1) {
             $_SESSION['results'][4] = $updateVal;
           }
           break;
         case 'bouton6':
-          if (isset($_POST['bouton6']) === true && $_SESSION['results'][5] === -1)) {
+          if (isset($_POST['bouton6']) === true && $_SESSION['results'][5] === -1) {
             $_SESSION['results'][5] = $updateVal;
           }
           break;
         case 'boutonbrelan':
-          if (isset($_POST['boutonbrelan']) === true && $_SESSION['results'][6] === -1)) {
+          if (isset($_POST['boutonbrelan']) === true && $_SESSION['results'][6] === -1) {
             $_SESSION['results'][6] = $updateVal;
           }
           break;
         case 'boutoncarre':
-          if (isset($_POST['boutoncarre']) === true && $_SESSION['results'][7] === -1)) {
+          if (isset($_POST['boutoncarre']) === true && $_SESSION['results'][7] === -1) {
             $_SESSION['results'][7] = $updateVal;
           }
           break;
         case 'boutonfull':
-          if (isset($_POST['boutonfull']) === true && $_SESSION['results'][8] === -1)) {
+          if (isset($_POST['boutonfull']) === true && $_SESSION['results'][8] === -1) {
             $_SESSION['results'][8] = $updateVal;
           }
           break;
         case 'boutonpsuite':
-          if (isset($_POST['boutonpsuite']) === true && $_SESSION['results'][9] === -1)) {
+          if (isset($_POST['boutonpsuite']) === true && $_SESSION['results'][9] === -1) {
             $_SESSION['results'][9] = $updateVal;
 					}
 					break;
         case 'boutongsuite':
-          if isset($_POST['boutongsuite']) === true && $_SESSION['results'][10] === -1)) {
+          if (isset($_POST['boutongsuite']) === true && $_SESSION['results'][10] === -1) {
             $_SESSION['results'][10] = $updateVal;
           }
           break;
         case 'boutonyahtzee':
-          if isset($_POST['boutonyahtzee']) === true && $_SESSION['results'][11] === -1)) {
+          if (isset($_POST['boutonyahtzee']) === true && $_SESSION['results'][11] === -1) {
             $_SESSION['results'][11] = $updateVal;
           }
           break;
         case 'boutonchance':
-          if isset($_POST['boutonchance']) === true && $_SESSION['results'][12] === -1)) {
+          if (isset($_POST['boutonchance']) === true && $_SESSION['results'][12] === -1) {
             $_SESSION['results'][12] = $updateVal;
 					}
           break;
@@ -287,18 +287,18 @@
 		//	update_all : Met à jour tous les boutons non initialisés au cas où l'utilisateur appuye sur eux.
 		function update_all($dTab) {
 			update_button('bouton1', calcul('bouton1', $dTab));
-			update_button('bouton2', calcul('bouton2', $dTab);
+			update_button('bouton2', calcul('bouton2', $dTab));
 			update_button('bouton3', calcul('bouton3', $dTab));
 			update_button('bouton4', calcul('bouton4', $dTab));
 			update_button('bouton5', calcul('bouton5', $dTab));
 			update_button('bouton6', calcul('bouton6', $dTab));
-			update_button('boutonbrelan', calcul('boutonbrelan', $dTab);
+			update_button('boutonbrelan', calcul('boutonbrelan', $dTab));
 			update_button('boutoncarre', calcul('boutoncarre', $dTab));
-			update_button('boutonfull', calcul('boutonfull', $dTab);
-			update_button('boutonpsuite', calcul('boutonpsuite', $dTab);
-			update_button('boutongsuite', calcul('boutongsuite', $dTab);
-			update_button('boutonyahtzee', calcul('boutonyahtzee', $dTab);
-			update_button('boutonchance', calcul('boutonchance', $dTab);
+			update_button('boutonfull', calcul('boutonfull', $dTab));
+			update_button('boutonpsuite', calcul('boutonpsuite', $dTab));
+			update_button('boutongsuite', calcul('boutongsuite', $dTab));
+			update_button('boutonyahtzee', calcul('boutonyahtzee', $dTab));
+			update_button('boutonchance', calcul('boutonchance', $dTab));
 		}
 		
 		//	update_results : Met à jour le total de la partie haute, de la partie basse, et général respectivement
@@ -392,17 +392,17 @@
           </tr>
           <tr>
             <td class=\"td\" ><label>Total section haute</label>
-                <input name=\"textsectionh\" type=\"text\" class=\"txtbox\" value='$_SESSION['results'][13]' disabled=\"true\"></td>
+                <input name=\"textsectionh\" type=\"text\" class=\"txtbox\" value='.$\_SESSION['results'][13].' disabled=\"true\"></td>
             <td class=\"td\" ><input value=\"Chance\" name=\"boutonchance\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textchance', ".$value_boutonchance.")\" onmouseout=\"clearbox('textchance')\">
                 <input name=\"textchance\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
             <td class=\"td\" ></td>
-            <td class=\"td\" ><label>Total section basse </label><input name=\"textsectionl\" type=\"text\" class=\"txtbox\" value='$_SESSION['results'][14]' disabled=\"true\"></td>
+            <td class=\"td\" ><label>Total section basse </label><input name=\"textsectionl\" type=\"text\" class=\"txtbox\" value='$\_SESSION['results'][14]' disabled=\"true\"></td>
           </tr>
           <tr id=\"tr1\">
             <td></td>
-            <td align=\"center\" id=\"td1\"><label>Total </label><input name=\"texttot\" type=\"text\" class=\"txtbox1\" value='$_SESSION['results'][15]' disabled=\"true\"></td>
+            <td align=\"center\" id=\"td1\"><label>Total </label><input name=\"texttot\" type=\"text\" class=\"txtbox1\" value='$\_SESSION['results'][15]' disabled=\"true\"></td>
           </tr>
         </tbody>
       </table>
