@@ -11,7 +11,7 @@
   $_SESSION['tour'] = 2;
   
   //Initialisation du tableau des résultats
-  $_SESSION['results'] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+  $_SESSION['results'] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0];
 
   //Initialisation des parties hautes et basses de l'interface du jeu.
   $line = "
