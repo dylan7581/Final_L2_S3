@@ -42,9 +42,9 @@
     function print_dice($n, $c) {
       if ($n >= 1 && $n <= 6) {
         echo "<div>";
-        echo "<img src='des/De$n.png' alt='Dé $n' name='img_de$c' onclick=\"checkbox('d$c', 'img_de$c')\">";
+        echo "<img src='des/De$n.png' alt='Dé $n' name='img_de$c' onclick=\"image_check('d$c', 'img_de$c')\">";
         echo "<br/>";
-        echo "<input type='checkbox' name='d$c'><label>Garder</label>";
+        echo "<input type='checkbox' name='d$c' onclick=\"checkbox('d$c', 'img_de$c')\"><label>Garder</label>";
         echo "</div>";
       } else {
         echo "<p>Erreur d'affichage</p>";
@@ -123,8 +123,9 @@
       $tab1 = $dice_tab;
       sort($tab1);
       $tab2 = array_unique($tab1);
+      $tab2 = array_values($tab2);
       $i = 0;
-      while($i < count($tab2) - 1 && $n1 < $n) {
+      while ($i < count($tab2) - 1 && $n1 < $n) {
         if ($tab2[$i] === $tab2[$i+1]-1) {
           $tot = true;
           ++$n1;
