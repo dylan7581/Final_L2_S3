@@ -18,7 +18,20 @@
   if(isset($_POST['lancer']) === false) {
     include("init.php");
   }
-  if(isset($_POST['lancer']) === true) {
+  if(isset($_POST['lancer']) === true
+    ||isset($_POST['bouton1']) === true
+    ||isset($_POST['bouton2']) === true
+    ||isset($_POST['bouton3']) === true
+    ||isset($_POST['bouton4']) === true
+    ||isset($_POST['bouton5']) === true
+    ||isset($_POST['bouton6']) === true
+    ||isset($_POST['boutonbrelan']) === true
+    ||isset($_POST['boutoncarre']) === true
+    ||isset($_POST['boutonfull']) === true
+    ||isset($_POST['boutonpsuite']) === true
+    ||isset($_POST['boutongsuite']) === true
+    ||isset($_POST['boutonyahtzee']) === true
+    ||isset($_POST['boutonchance']) === true) {
     //  print_dice : Affiche le dé correspondant à la valeur de la variable
     //    $_SESSION['de[n]'] où [n] est le chiffre correspondant au dé à afficher.
     //    Affiche "Erreur d'affichage" et met fin à la session en cas d'erreur.
