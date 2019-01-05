@@ -311,7 +311,7 @@
     }
 		
 		//	update_all : Met à jour tous les boutons non initialisés au cas où l'utilisateur appuye sur eux.
-		function update_all($dTab) {
+		function update_all_dice($dTab) {
 			update_button('bouton1', calcul('bouton1', $dTab));
 			update_button('bouton2', calcul('bouton2', $dTab));
 			update_button('bouton3', calcul('bouton3', $dTab));
@@ -368,7 +368,7 @@
     $value_boutongsuite = calcul('boutongsuite', $dice_tab);
     $value_boutonyahtzee = calcul('boutonyahtzee', $dice_tab);
     $value_boutonchance = calcul('boutonchance', $dice_tab);
-    update_all($dice_tab);
+    update_all_dice($dice_tab);
 		update_results();
     $result13 = $_SESSION['results'][13];
     $result14 = $_SESSION['results'][14];
