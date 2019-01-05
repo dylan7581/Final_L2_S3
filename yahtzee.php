@@ -344,6 +344,9 @@
     $value_boutonchance = calcul('boutonchance', $dice_tab);
     update_all($dice_tab);
 		update_results();
+    $result13 = $_SESSION['results'][13];
+    $result14 = $_SESSION['results'][14];
+    $result15 = $_SESSION['results'][15];
     $line = "
     <form method=\"post\" action=\"\">
       <table>
@@ -392,17 +395,17 @@
           </tr>
           <tr>
             <td class=\"td\" ><label>Total section haute</label>
-                <input name=\"textsectionh\" type=\"text\" class=\"txtbox\" value='.$\_SESSION['results'][13].' disabled=\"true\"></td>
+                <input name=\"textsectionh\" type=\"text\" class=\"txtbox\" value=\"$result13\" disabled=\"true\"></td>
             <td class=\"td\" ><input value=\"Chance\" name=\"boutonchance\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textchance', ".$value_boutonchance.")\" onmouseout=\"clearbox('textchance')\">
                 <input name=\"textchance\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
             <td class=\"td\" ></td>
-            <td class=\"td\" ><label>Total section basse </label><input name=\"textsectionl\" type=\"text\" class=\"txtbox\" value='$\_SESSION['results'][14]' disabled=\"true\"></td>
+            <td class=\"td\" ><label>Total section basse </label><input name=\"textsectionl\" type=\"text\" class=\"txtbox\" value=\"$result14\" disabled=\"true\"></td>
           </tr>
           <tr id=\"tr1\">
             <td></td>
-            <td align=\"center\" id=\"td1\"><label>Total </label><input name=\"texttot\" type=\"text\" class=\"txtbox1\" value='$\_SESSION['results'][15]' disabled=\"true\"></td>
+            <td align=\"center\" id=\"td1\"><label>Total </label><input name=\"texttot\" type=\"text\" class=\"txtbox1\" value=\"$result15\" disabled=\"true\"></td>
           </tr>
         </tbody>
       </table>
