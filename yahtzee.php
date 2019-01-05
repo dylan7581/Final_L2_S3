@@ -15,36 +15,22 @@
   </body>
 </html>
 <?php
-  if(isset($_POST['lancer']) === false
-		&&isset($_POST['bouton1']) === false
-    &&isset($_POST['bouton2']) === false
-    &&isset($_POST['bouton3']) === false
-    &&isset($_POST['bouton4']) === false
-    &&isset($_POST['bouton5']) === false
-    &&isset($_POST['bouton6']) === false
-    &&isset($_POST['boutonbrelan']) === false
-    &&isset($_POST['boutoncarre']) === false
-    &&isset($_POST['boutonfull']) === false
-    &&isset($_POST['boutonpsuite']) === false
-    &&isset($_POST['boutongsuite']) === false
-    &&isset($_POST['boutonyahtzee']) === false
-    &&isset($_POST['boutonchance']) === false) {
+  if(isset($_POST['lancer']) === false) {
+    if (isset($_POST['bouton1']) === true) {$_SESSION['results'][0] = $_SESSION['tmp'][0]; $_SESSION['results'][13] += $_SESSION['tmp'][0]; $_SESSION['disabled'][0] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['bouton2']) === true) {$_SESSION['results'][1] = $_SESSION['tmp'][1]; $_SESSION['results'][13] += $_SESSION['tmp'][1]; $_SESSION['disabled'][1] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['bouton3']) === true) {$_SESSION['results'][2] = $_SESSION['tmp'][2]; $_SESSION['results'][13] += $_SESSION['tmp'][2]; $_SESSION['disabled'][2] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['bouton4']) === true) {$_SESSION['results'][3] = $_SESSION['tmp'][3]; $_SESSION['results'][13] += $_SESSION['tmp'][3]; $_SESSION['disabled'][3] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['bouton5']) === true) {$_SESSION['results'][4] = $_SESSION['tmp'][4]; $_SESSION['results'][13] += $_SESSION['tmp'][4]; $_SESSION['disabled'][4] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['bouton6']) === true) {$_SESSION['results'][5] = $_SESSION['tmp'][5]; $_SESSION['results'][13] += $_SESSION['tmp'][5]; $_SESSION['disabled'][5] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['boutonbrelan']) === true) {$_SESSION['results'][6] = $_SESSION['tmp'][6]; $_SESSION['results'][14] += $_SESSION['tmp'][6]; $_SESSION['disabled'][6] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['boutoncarre']) === true) {$_SESSION['results'][7] = $_SESSION['tmp'][7]; $_SESSION['results'][14] += $_SESSION['tmp'][7]; $_SESSION['disabled'][7] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['boutonfull']) === true) {$_SESSION['results'][8] = $_SESSION['tmp'][8]; $_SESSION['results'][14] += $_SESSION['tmp'][8]; $_SESSION['disabled'][8] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['boutonpsuite']) === true) {$_SESSION['results'][9] = $_SESSION['tmp'][9]; $_SESSION['results'][14] += $_SESSION['tmp'][9]; $_SESSION['disabled'][9] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['boutongsuite']) === true) {$_SESSION['results'][10] = $_SESSION['tmp'][10]; $_SESSION['results'][14] += $_SESSION['tmp'][10]; $_SESSION['disabled'][10] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['boutonyahtzee']) === true) {$_SESSION['results'][11] = $_SESSION['tmp'][11]; $_SESSION['results'][14] += $_SESSION['tmp'][11]; $_SESSION['disabled'][11] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
+    if (isset($_POST['boutonchance']) === true) {$_SESSION['results'][12] = $_SESSION['tmp'][12]; $_SESSION['results'][14] += $_SESSION['tmp'][12]; $_SESSION['disabled'][12] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
     include("init.php");
-  }
-  if(isset($_POST['lancer']) === true
-    ||isset($_POST['bouton1']) === true
-    ||isset($_POST['bouton2']) === true
-    ||isset($_POST['bouton3']) === true
-    ||isset($_POST['bouton4']) === true
-    ||isset($_POST['bouton5']) === true
-    ||isset($_POST['bouton6']) === true
-    ||isset($_POST['boutonbrelan']) === true
-    ||isset($_POST['boutoncarre']) === true
-    ||isset($_POST['boutonfull']) === true
-    ||isset($_POST['boutonpsuite']) === true
-    ||isset($_POST['boutongsuite']) === true
-    ||isset($_POST['boutonyahtzee']) === true
-    ||isset($_POST['boutonchance']) === true) {
+  } else {
 		
 //--- Fonctions utilisées -------------------------------------------------------------------------------------
 		
@@ -241,119 +227,8 @@
           break;
 			}
     }
-
-	//	update_button : Met à jour la valeur au champ de nom $button si le bouton associé n'as pas encore
-	//		été utilisé.
-  function update_button($button, $updateVal) {
-      switch($button) {
-        case 'bouton1':
-          if (isset($_POST['bouton1']) === true && $_SESSION['results'][0] === -1) {
-            $_SESSION['results'][0] = $updateVal;
-          }
-          break;
-        case 'bouton2':
-          if (isset($_POST['bouton2']) === true && $_SESSION['results'][1] === -1) {
-            $_SESSION['results'][1] = $updateVal;
-          }
-          break;
-        case 'bouton3':
-          if (isset($_POST['bouton3']) === true && $_SESSION['results'][2] === -1) {
-            $_SESSION['results'][2] = $updateVal;
-          }
-          break;
-        case 'bouton4':
-          if (isset($_POST['bouton4']) === true && $_SESSION['results'][3] === -1) {
-            $_SESSION['results'][3] = $updateVal;
-          }
-          break;
-        case 'bouton5':
-          if (isset($_POST['bouton5']) === true && $_SESSION['results'][4] === -1) {
-            $_SESSION['results'][4] = $updateVal;
-          }
-          break;
-        case 'bouton6':
-          if (isset($_POST['bouton6']) === true && $_SESSION['results'][5] === -1) {
-            $_SESSION['results'][5] = $updateVal;
-          }
-          break;
-        case 'boutonbrelan':
-          if (isset($_POST['boutonbrelan']) === true && $_SESSION['results'][6] === -1) {
-            $_SESSION['results'][6] = $updateVal;
-          }
-          break;
-        case 'boutoncarre':
-          if (isset($_POST['boutoncarre']) === true && $_SESSION['results'][7] === -1) {
-            $_SESSION['results'][7] = $updateVal;
-          }
-          break;
-        case 'boutonfull':
-          if (isset($_POST['boutonfull']) === true && $_SESSION['results'][8] === -1) {
-            $_SESSION['results'][8] = $updateVal;
-          }
-          break;
-        case 'boutonpsuite':
-          if (isset($_POST['boutonpsuite']) === true && $_SESSION['results'][9] === -1) {
-            $_SESSION['results'][9] = $updateVal;
-					}
-					break;
-        case 'boutongsuite':
-          if (isset($_POST['boutongsuite']) === true && $_SESSION['results'][10] === -1) {
-            $_SESSION['results'][10] = $updateVal;
-          }
-          break;
-        case 'boutonyahtzee':
-          if (isset($_POST['boutonyahtzee']) === true && $_SESSION['results'][11] === -1) {
-            $_SESSION['results'][11] = $updateVal;
-          }
-          break;
-        case 'boutonchance':
-          if (isset($_POST['boutonchance']) === true && $_SESSION['results'][12] === -1) {
-            $_SESSION['results'][12] = $updateVal;
-					}
-          break;
-			}
-    }
-		
-		//	update_all : Met à jour tous les boutons non initialisés au cas où l'utilisateur appuye sur eux.
-		function update_all_dice($dTab) {
-			update_button('bouton1', calcul('bouton1', $dTab));
-			update_button('bouton2', calcul('bouton2', $dTab));
-			update_button('bouton3', calcul('bouton3', $dTab));
-			update_button('bouton4', calcul('bouton4', $dTab));
-			update_button('bouton5', calcul('bouton5', $dTab));
-			update_button('bouton6', calcul('bouton6', $dTab));
-			update_button('boutonbrelan', calcul('boutonbrelan', $dTab));
-			update_button('boutoncarre', calcul('boutoncarre', $dTab));
-			update_button('boutonfull', calcul('boutonfull', $dTab));
-			update_button('boutonpsuite', calcul('boutonpsuite', $dTab));
-			update_button('boutongsuite', calcul('boutongsuite', $dTab));
-			update_button('boutonyahtzee', calcul('boutonyahtzee', $dTab));
-			update_button('boutonchance', calcul('boutonchance', $dTab));
-		}
-		
-		//	update_results : Met à jour le total de la partie haute, de la partie basse, et général respectivement
-		//		contenus dans $_SESSION['results'][13], $_SESSION['results'][14], et $_SESSION['results'][15].
-		function update_results() {
-			$hsum = 0;
-			$lsum = 0;
-			$res = 0;
-			for ($i = 0; $i < 12; ++$i) {
-				if ($_SESSION['results'][$i] !== -1) {
-					if ($i < 5) {
-						$hsum = $hsum + $_SESSION['results'][$i];
-					} else {
-						$lsum = $lsum + $_SESSION['results'][$i];
-					}
-				}
-			}
-			$res = $hsum + $lsum;
-			$_SESSION['results'][13] = $hsum;
-			$_SESSION['results'][14] = $lsum;
-			$_SESSION['results'][15] = $res;
-		}
-		
 //--- Programme principal -------------------------------------------------------------------------------------
-		
+
 		if (isset($_POST['lancer']) === true) {
     	next_turn();
 		}
@@ -376,11 +251,31 @@
     $value_boutongsuite = calcul('boutongsuite', $dice_tab);
     $value_boutonyahtzee = calcul('boutonyahtzee', $dice_tab);
     $value_boutonchance = calcul('boutonchance', $dice_tab);
-    update_all_dice($dice_tab);
-		update_results();
+
+    $_SESSION['tmp'] = [$value_bouton1, $value_bouton2, $value_bouton3, $value_bouton4,
+                       $value_bouton5, $value_bouton6, $value_boutonbrelan, $value_boutoncarre,
+                       $value_boutonfull, $value_boutonpsuite, $value_boutongsuite, $value_boutonyahtzee,
+                       $value_boutonchance];
+    //desactiver boutons
+    $desact1 = $_SESSION['disabled'][0];
+    $desact2 = $_SESSION['disabled'][1];
+    $desact3 = $_SESSION['disabled'][2];
+    $desact4 = $_SESSION['disabled'][3];
+    $desact5 = $_SESSION['disabled'][4];
+    $desact6 = $_SESSION['disabled'][5];
+    $desactbrelan = $_SESSION['disabled'][6];
+    $desactcarre = $_SESSION['disabled'][7];
+    $desactfull = $_SESSION['disabled'][8];
+    $desactpsuite = $_SESSION['disabled'][9];
+    $desactgsuite = $_SESSION['disabled'][10];
+    $desactyahtzee = $_SESSION['disabled'][11];
+    $desactchance = $_SESSION['disabled'][12];
+
+
+
     $result13 = $_SESSION['results'][13];
     $result14 = $_SESSION['results'][14];
-    $result15 = $_SESSION['results'][15];
+    $result15 = $_SESSION['results'][13] + $_SESSION['results'][14];
     $line = "
     <form method=\"post\" action=\"\">
       <table>
@@ -392,45 +287,45 @@
         </thead>
         <tbody>
           <tr>
-            <td class=\"td\" ><input value=\"As\" name=\"bouton1\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text1', ".$value_bouton1.")\" onmouseout=\"clearbox('text1')\">
+            <td class=\"td\" ><input value=\"As\" name=\"bouton1\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text1', ".$value_bouton1.")\" onmouseout=\"clearbox('text1')\" $desact1>
               <input name=\"text1\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
-            <td class=\"td\" ><input value=\"Brelan\" name=\"boutonbrelan\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textbrelan', ".$value_boutonbrelan.")\" onmouseout=\"clearbox('textbrelan')\">
+            <td class=\"td\" ><input value=\"Brelan\" name=\"boutonbrelan\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textbrelan', ".$value_boutonbrelan.")\" onmouseout=\"clearbox('textbrelan')\" $desactbrelan>
               <input name=\"textbrelan\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
-            <td class=\"td\" ><input value=\"Deux\" name=\"bouton2\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text2', ".$value_bouton2.")\" onmouseout=\"clearbox('text2')\">
+            <td class=\"td\" ><input value=\"Deux\" name=\"bouton2\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text2', ".$value_bouton2.")\" onmouseout=\"clearbox('text2')\" $desact2>
                 <input name=\"text2\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
-            <td class=\"td\" ><input value=\"Carre\" name=\"boutoncarre\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textcarre', ".$value_boutoncarre.")\" onmouseout=\"clearbox('textcarre')\">
+            <td class=\"td\" ><input value=\"Carre\" name=\"boutoncarre\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textcarre', ".$value_boutoncarre.")\" onmouseout=\"clearbox('textcarre')\" $desactcarre>
                 <input name=\"textcarre\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
-            <td class=\"td\" ><input value=\"Trois\" name=\"bouton3\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text3', ".$value_bouton3.")\" onmouseout=\"clearbox('text3')\">
+            <td class=\"td\" ><input value=\"Trois\" name=\"bouton3\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text3', ".$value_bouton3.")\" onmouseout=\"clearbox('text3')\" $desact3>
                 <input name=\"text3\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
-            <td class=\"td\" ><input value=\"Full\" name=\"boutonfull\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textfull', ".$value_boutonfull.")\" onmouseout=\"clearbox('textfull')\">
+            <td class=\"td\" ><input value=\"Full\" name=\"boutonfull\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textfull', ".$value_boutonfull.")\" onmouseout=\"clearbox('textfull')\" $desactfull>
                 <input name=\"textfull\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
-            <td class=\"td\" ><input value=\"Quatre\" name=\"bouton4\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text4', ".$value_bouton4.")\" onmouseout=\"clearbox('text4')\">
+            <td class=\"td\" ><input value=\"Quatre\" name=\"bouton4\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text4', ".$value_bouton4.")\" onmouseout=\"clearbox('text4')\" $desact4>
                 <input name=\"text4\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
-            <td class=\"td\" ><input value=\"Petite suite\" name=\"boutonpsuite\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textpsuite', ".$value_boutonpsuite.")\" onmouseout=\"clearbox('textpsuite')\">
+            <td class=\"td\" ><input value=\"Petite suite\" name=\"boutonpsuite\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textpsuite', ".$value_boutonpsuite.")\" onmouseout=\"clearbox('textpsuite')\" $desactpsuite>
                 <input name=\"textpsuite\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
-            <td class=\"td\" ><input value=\"Cinq\" name=\"bouton5\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text5', ".$value_bouton5.")\" onmouseout=\"clearbox('text5')\">
+            <td class=\"td\" ><input value=\"Cinq\" name=\"bouton5\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text5', ".$value_bouton5.")\" onmouseout=\"clearbox('text5')\" $desact5>
                 <input name=\"text5\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
-            <td class=\"td\" ><input value=\"Grande suite\" name=\"boutongsuite\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textgsuite', ".$value_boutongsuite.")\" onmouseout=\"clearbox('textgsuite')\">
+            <td class=\"td\" ><input value=\"Grande suite\" name=\"boutongsuite\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textgsuite', ".$value_boutongsuite.")\" onmouseout=\"clearbox('textgsuite')\" $desactgsuite>
                 <input name=\"textgsuite\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
-            <td class=\"td\" ><input value=\"Six\" name=\"bouton6\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text6', ".$value_bouton6.")\" onmouseout=\"clearbox('text6')\">
+            <td class=\"td\" ><input value=\"Six\" name=\"bouton6\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('text6', ".$value_bouton6.")\" onmouseout=\"clearbox('text6')\" $desact6>
                 <input name=\"text6\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
-            <td class=\"td\" ><input value=\"Yahtzee\" name=\"boutonyahtzee\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textyahtzee', ".$value_boutonyahtzee.")\" onmouseout=\"clearbox('textyahtzee')\">
+            <td class=\"td\" ><input value=\"Yahtzee\" name=\"boutonyahtzee\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textyahtzee', ".$value_boutonyahtzee.")\" onmouseout=\"clearbox('textyahtzee')\" $desactyahtzee>
                 <input name=\"textyahtzee\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
             <td class=\"td\" ><label>Total section haute</label>
                 <input name=\"textsectionh\" type=\"text\" class=\"txtbox\" value=\"$result13\" disabled=\"true\"></td>
-            <td class=\"td\" ><input value=\"Chance\" name=\"boutonchance\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textchance', ".$value_boutonchance.")\" onmouseout=\"clearbox('textchance')\">
+            <td class=\"td\" ><input value=\"Chance\" name=\"boutonchance\" type=\"submit\" class=\"button\" onmouseover=\"value_survol('textchance', ".$value_boutonchance.")\" onmouseout=\"clearbox('textchance')\" $desactchance>
                 <input name=\"textchance\" type=\"text\" class=\"txtbox\" disabled=\"true\"></td>
           </tr>
           <tr>
@@ -452,10 +347,9 @@
     echo "<div class='affichage_des'>";
     print_all_dice();
     print_throw_button($_SESSION['tour']);
-		if (isset($_SESSION['lancer']) === true || $_SESSION['relance'] === true) {
-    	$_SESSION['tour'] = $_SESSION['tour'] - 1;
-			$_SESSION['relance'] = true;
-		}
+    if ($_SESSION['tour'] != 0) {
+      $_SESSION['tour'] = $_SESSION['tour'] - 1;
+    }
     echo "</div>";
     echo "</form>";
   }

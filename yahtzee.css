@@ -19,7 +19,7 @@ table {
 	border-collapse: collapse;
 }
 
-.button {
+.button, .buttonr {
 	padding: 10px;
 	text-align: center;
 	margin: 4px 7% 4px 0px;
@@ -30,12 +30,12 @@ table {
 	width: 34%;
 }
 
-.button:hover {
+.button:hover, .buttonr:hover {
 	background-color: #4CAF50;
   color: white;
 }
 
-.button:active, .button1:active {
+.button:active, .button1:active, .buttonr:active {
 	transform: translateY(4px);
 }
 
@@ -109,4 +109,7 @@ img {
 
 #td label {
 	margin-right: 4%;
+}
+.buttonr, h2, .formr {
+	text-align: center;
 }
