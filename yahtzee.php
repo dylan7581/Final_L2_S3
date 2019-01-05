@@ -347,8 +347,9 @@
 			$_SESSION['results'][14] = $lsum;
 			$_SESSION['results'][15] = $res;
 		}
-		
-    next_turn();
+		if (isset($_POST['lancer']) === true) {
+    	next_turn();
+		}
     $de1 = $_SESSION['de1'];
     $de2 = $_SESSION['de2'];
     $de3 = $_SESSION['de3'];
