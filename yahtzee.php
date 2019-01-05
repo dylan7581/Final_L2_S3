@@ -209,7 +209,10 @@
         case 'boutonpsuite':
           if (is_n_suite(4, $dice_tab) === true) {
             return 30;
-          } 
+          } else {
+            return "";
+          }
+          break;
         case 'boutongsuite':
           if (is_n_suite(5, $dice_tab) === true) {
             return 40;
