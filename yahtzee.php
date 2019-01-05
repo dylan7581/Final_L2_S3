@@ -210,17 +210,102 @@
         case 'boutonchance':
           return array_sum($dice_tab);
           break;
-      }
-
+			}
     }
-
+		
+		//	update_button : Met à jour la valeur du bouton de nom $button si ce-dernier n'as pas encore été utilisé
+		function update_button($button, $updateVal) {
+      switch($button) {
+        case 'bouton1':
+          if (isset($_POST['bouton1']) === true && $_SESSION['results'][0] === -1) {
+            $_SESSION['results'][0] = $updateVal;
+          }
+          break;
+        case 'bouton2':
+          if (isset($_POST['bouton2']) === true && $_SESSION['results'][1] === -1)) {
+            $_SESSION['results'][1] = $updateVal;
+          }
+          break;
+        case 'bouton3':
+          if (isset($_POST['bouton3']) === true && $_SESSION['results'][2] === -1)) {
+            $_SESSION['results'][2] = $updateVal;
+          }
+          break;
+        case 'bouton4':
+          if (isset($_POST['bouton4']) === true && $_SESSION['results'][3] === -1)) {
+            $_SESSION['results'][3] = $updateVal;
+          }
+          break;
+        case 'bouton5':
+          if (isset($_POST['bouton5']) === true && $_SESSION['results'][4] === -1)) {
+            $_SESSION['results'][4] = $updateVal;
+          }
+          break;
+        case 'bouton6':
+          if (isset($_POST['bouton6']) === true && $_SESSION['results'][5] === -1)) {
+            $_SESSION['results'][5] = $updateVal;
+          }
+          break;
+        case 'boutonbrelan':
+          if (isset($_POST['boutonbrelan']) === true && $_SESSION['results'][6] === -1)) {
+            $_SESSION['results'][6] = $updateVal;
+          }
+          break;
+        case 'boutoncarre':
+          if (isset($_POST['boutoncarre']) === true && $_SESSION['results'][7] === -1)) {
+            $_SESSION['results'][7] = $updateVal;
+          }
+          break;
+        case 'boutonfull':
+          if (isset($_POST['boutonfull']) === true && $_SESSION['results'][8] === -1)) {
+            $_SESSION['results'][8] = $updateVal;
+          }
+          break;
+        case 'boutonpsuite':
+          if (isset($_POST['boutonpsuite']) === true && $_SESSION['results'][9] === -1)) {
+            $_SESSION['results'][9] = $updateVal;
+					}
+					break;
+        case 'boutongsuite':
+          if isset($_POST['boutongsuite']) === true && $_SESSION['results'][9] === -1)) {
+            $_SESSION['results'][9] = $updateVal;
+          }
+          break;
+        case 'boutonyahtzee':
+          if isset($_POST['boutonyahtzee']) === true && $_SESSION['results'][10] === -1)) {
+            $_SESSION['results'][10] = $updateVal;
+          }
+          break;
+        case 'boutonchance':
+          if isset($_POST['boutonchance']) === true && $_SESSION['results'][11] === -1)) {
+            $_SESSION['results'][11] = $updateVal;
+					}
+          break;
+			}
+    }
+		
+		function update_all($dTab) {
+			update_button('bouton1', calcul('bouton1', $dTab));
+			update_button('bouton2', calcul('bouton2', $dTab);
+			update_button('bouton3', calcul('bouton3', $dTab));
+			update_button('bouton4', calcul('bouton4', $dTab));
+			update_button('bouton5', calcul('bouton5', $dTab));
+			update_button('bouton6', calcul('bouton6', $dTab));
+			update_button('boutonbrelan', calcul('boutonbrelan', $dTab);
+			update_button('boutoncarre', calcul('boutoncarre', $dTab));
+			update_button('boutonfull', calcul('boutonfull', $dTab);
+			update_button('boutonpsuite', calcul('boutonpsuite', $dTab);
+			update_button('boutongsuite', calcul('boutongsuite', $dTab);
+			update_button('boutonyahtzee', calcul('boutonyahtzee', $dTab);
+			update_button('boutonchance', calcul('boutonchance', $dTab);
+		}
+			
     next_turn();
     $de1 = $_SESSION['de1'];
     $de2 = $_SESSION['de2'];
     $de3 = $_SESSION['de3'];
     $de4 = $_SESSION['de4'];
     $de5 = $_SESSION['de5'];
-
     $dice_tab = array($de1, $de2, $de3, $de4, $de5);
     $value_bouton1 = calcul('bouton1', $dice_tab);
     $value_bouton2 = calcul('bouton2', $dice_tab);
@@ -235,6 +320,7 @@
     $value_boutongsuite = calcul('boutongsuite', $dice_tab);
     $value_boutonyahtzee = calcul('boutonyahtzee', $dice_tab);
     $value_boutonchance = calcul('boutonchance', $dice_tab);
+    update_all($dice_tab);
     $line = "
     <form method=\"post\" action=\"\">
       <table>
