@@ -16,6 +16,8 @@
 </html>
 <?php
   if(isset($_POST['lancer']) === false) {
+    // si l'un des boutons est appuyer, alors la valeur garder en mémoire est 
+    //  mis stocker dans le tableau résultat et le bouton est désactiver pour les prochain tour.
     if (isset($_POST['bouton1']) === true) {$_SESSION['results'][0] = $_SESSION['tmp'][0]; $_SESSION['results'][13] += $_SESSION['tmp'][0]; $_SESSION['disabled'][0] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
     if (isset($_POST['bouton2']) === true) {$_SESSION['results'][1] = $_SESSION['tmp'][1]; $_SESSION['results'][13] += $_SESSION['tmp'][1]; $_SESSION['disabled'][1] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
     if (isset($_POST['bouton3']) === true) {$_SESSION['results'][2] = $_SESSION['tmp'][2]; $_SESSION['results'][13] += $_SESSION['tmp'][2]; $_SESSION['disabled'][2] = 'disabled'; $_SESSION['cases'] = $_SESSION['cases'] - 1;}
@@ -252,11 +254,13 @@
     $value_boutonyahtzee = calcul('boutonyahtzee', $dice_tab);
     $value_boutonchance = calcul('boutonchance', $dice_tab);
 
+    //On stocke les résultats des calculs dans le tableau qui garde en mémoire.
     $_SESSION['tmp'] = [$value_bouton1, $value_bouton2, $value_bouton3, $value_bouton4,
                        $value_bouton5, $value_bouton6, $value_boutonbrelan, $value_boutoncarre,
                        $value_boutonfull, $value_boutonpsuite, $value_boutongsuite, $value_boutonyahtzee,
                        $value_boutonchance];
-    //desactiver boutons
+    //Variable qui stocke la chaine de caractère 'disabled' si le bouton a déjà 
+    //  était cliquer, ou '' sinon.
     $desact1 = $_SESSION['disabled'][0];
     $desact2 = $_SESSION['disabled'][1];
     $desact3 = $_SESSION['disabled'][2];
@@ -272,7 +276,7 @@
     $desactchance = $_SESSION['disabled'][12];
 
 
-
+    //Variables qui stocke le résultat des totals.
     $result13 = $_SESSION['results'][13];
     $result14 = $_SESSION['results'][14];
     $result15 = $_SESSION['results'][13] + $_SESSION['results'][14];
@@ -347,6 +351,7 @@
     echo "<div class='affichage_des'>";
     print_all_dice();
     print_throw_button($_SESSION['tour']);
+    //Décrémente le nombre de relancement.
     if ($_SESSION['tour'] != 0) {
       $_SESSION['tour'] = $_SESSION['tour'] - 1;
     }

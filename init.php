@@ -1,8 +1,8 @@
 <?php
   //Init.php : Initialise les variables de session nécessaires et les dés au
-  //  premier tour du jeu.
+  //  premier tour du jeu et après avoir appuyer sur l'un des boutons.
   session_start();
-
+  //Initialise le jeu.
   if (isset($_POST['bouton1']) === false &&
       isset($_POST['bouton2']) === false &&
       isset($_POST['bouton3']) === false &&
@@ -17,20 +17,22 @@
       isset($_POST['boutonyahtzee']) === false &&
       isset($_POST['boutonchance']) === false) {
 
+    //Garde en mémoire les calculs fait pour chaque boutons.
     $_SESSION['tmp'] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     //Nombre de cases qui sont encore disponibles.
     $_SESSION['cases'] = 13;
     
-    //Initialisation du tableau des résultats
+    //Initialisation du tableau des résultats.
     $_SESSION['results'] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-    //Initialisation du tableau pour desactiver boutons
+    //Initialisation du tableau pour desactiver boutons.
     $_SESSION['disabled'] = ['', '', '', '', '', '', '', '', '', '', '', '', ''];
 }
-  //Nombre de fois que l'utilisateur peut appuyer sur le bouton "Lancer!" après
-  //  avoir démarré la partie.
+//Nombre de boutons encore actif.
   if ($_SESSION['cases'] !== 0) {
+    //Nombre de fois que l'utilisateur peut appuyer sur le bouton "Lancer!" après
+    //  avoir démarré la partie.
     $_SESSION['tour'] = 2;
   } else {
     header('Location: win.php');
