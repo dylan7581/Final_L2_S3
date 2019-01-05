@@ -15,7 +15,7 @@
   </body>
 </html>
 <?php
-  if(isset($_POST['lancer']
+  if(isset($_POST['lancer']) === true
 		||isset($_POST['bouton1']) === false
     ||isset($_POST['bouton2']) === false
     ||isset($_POST['bouton3']) === false
